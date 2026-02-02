@@ -1,6 +1,11 @@
-const genDiff = (filepath1, filepath2, format = 'stylish') => {
+import fs from 'fs';
+import path from 'path';
 
-  return `Comparing ${filepath1} with ${filepath2} using ${format} format`;
+const genDiff = (file1, file2) => {
+  const data1 = JSON.parse(fs.readFileSync(path.resolve(file1), 'utf-8'));
+  const data2 = JSON.parse(fs.readFileSync(path.resolve(file2), 'utf-8'));
+  
+  return `Both files read successfully. Format not implemented yet.`;
 };
 
 export default genDiff;
