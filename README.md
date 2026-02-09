@@ -43,27 +43,3 @@ make test-yaml-plain
 # Сравнить файлы разных форматов
 gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ```
-## Справка
-![Help](images/help.png)
-
-## Версия
-![Version](images/version.png)
-
-##  Сравнение два JSON файла
-![JSON stylish](images/test-json.png)
-
-##  Сравнение с форматом plain
-![JSON plain](images/test-json-plain.png)
-
-## Сравнение с форматом json
-![JSON json](images/test-json-json1.png)
-![JSON json](images/test-json-json1.png)
-
-##  Сравнение  YAML файлов
-![YAML](images/test-yaml.png)
-
-##  Сравнение  YAML с форматом plain
-![YAML plain](images/test-yaml-plain.png)
-
-##  Сравнение  файлы разных форматов
-![JSON YAML](images/different-formats.png)
