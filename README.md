@@ -66,4 +66,4 @@ gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ![YAML plain](images/test-yaml-plain.png)
 
 ##  Сравнение  файлы разных форматов
-![different formats](images/different-formats.png)
+![JSON YAML](images/different-formats.png)
