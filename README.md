@@ -23,10 +23,10 @@ npm link
 gendiff -h
 
 # Сравнить два JSON файла (формат по умолчанию - stylish)
-gendiff __fixtures__/file1.json __fixtures__/file2.json
+make test-json
 
 # Сравнить с форматом plain
-gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json
+make test-yaml
 
 # Сравнить YAML файлы
 gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml
