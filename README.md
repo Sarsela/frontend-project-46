@@ -5,7 +5,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/ваш-username/frontend-project-46.git
+git clone ссылка на репозиторий
 cd frontend-project-46
 
 # Установите зависимости
