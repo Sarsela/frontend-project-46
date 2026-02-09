@@ -14,3 +14,23 @@ npm install
 # Установите пакет локально (для тестирования)
 npm link
 `` `
+## Использование
+
+После установки команда `gendiff` будет доступна в терминале:
+
+```bash
+# Вывести справку
+gendiff -h
+
+# Сравнить два JSON файла (формат по умолчанию - stylish)
+gendiff __fixtures__/file1.json __fixtures__/file2.json
+
+# Сравнить с форматом plain
+gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json
+
+# Сравнить YAML файлы
+gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml
+
+# Сравнить файлы разных форматов
+gendiff __fixtures__/file1.json __fixtures__/file2.yaml
+`` `
