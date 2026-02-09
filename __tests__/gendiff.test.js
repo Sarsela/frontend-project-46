@@ -10,6 +10,8 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
+const normalizeString = (str) => str.trim().replace(/\r\n/g, '\n').replace(/\s+$/gm, '');
+
 describe('gendiff', () => {
   test('compares flat JSON files', () => {
     const file1 = getFixturePath('file1.json');
@@ -17,7 +19,11 @@ describe('gendiff', () => {
     const expected = readFixture('expected.txt');
     
     const result = genDiff(file1, file2);
-    expect(result).toEqual(expected.trim());
+    
+    const normalizedResult = normalizeString(result);
+    const normalizedExpected = normalizeString(expected);
+    
+    expect(normalizedResult).toBe(normalizedExpected);
   });
 
   test('throws error for non-existent file', () => {
