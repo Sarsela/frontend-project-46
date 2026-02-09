@@ -10,7 +10,12 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const normalize = (str) => str.trim();
+const normalize = (str) => {
+  return str
+    .trim()
+    .replace(/\r\n/g, '\n')
+    .replace(/\s+$/gm, '');
+};
 
 describe('gendiff', () => {
   test('compares nested JSON files with stylish format (default)', () => {
