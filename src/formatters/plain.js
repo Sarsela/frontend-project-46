@@ -34,7 +34,7 @@ const formatNode = (node, parentPath = '') => {
 
     case 'nested':
       return children
-        .map((child) => formatNode(child, currentPath))
+        .map(child => formatNode(child, currentPath))
         .filter(Boolean)
         .join('\n')
 
@@ -48,8 +48,8 @@ const formatNode = (node, parentPath = '') => {
 
 const formatPlain = (tree) => {
   const lines = tree
-    .map((node) => formatNode(node))
-    .filter((line) => line !== '')
+    .map(node => formatNode(node))
+    .filter(line => line !== '')
 
   return lines.join('\n')
 }

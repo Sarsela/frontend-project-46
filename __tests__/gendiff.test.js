@@ -7,8 +7,8 @@ import genDiff from '../src/index.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename)
-const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8')
+const getFixturePath = filename => join(__dirname, '..', '__fixtures__', filename)
+const readFixture = filename => readFileSync(getFixturePath(filename), 'utf-8')
 
 const normalize = (str) => {
   return str
