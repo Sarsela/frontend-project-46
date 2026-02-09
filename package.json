@@ -9,11 +9,12 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-   "scripts": {
-     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",

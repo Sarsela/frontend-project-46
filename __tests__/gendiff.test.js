@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const normalizeString = (str) => str.trim().replace(/\r\n/g, '\n').replace(/\s+$/gm, '');
+const normalize = (str) => str.trim();
 
 describe('gendiff', () => {
   test('compares flat JSON files', () => {
@@ -19,11 +19,25 @@ describe('gendiff', () => {
     const expected = readFixture('expected.txt');
     
     const result = genDiff(file1, file2);
+    expect(normalize(result)).toBe(normalize(expected));
+  });
+
+  test('compares flat YAML files', () => {
+    const file1 = getFixturePath('file1.yaml');
+    const file2 = getFixturePath('file2.yaml');
+    const expected = readFixture('expected.txt');
     
-    const normalizedResult = normalizeString(result);
-    const normalizedExpected = normalizeString(expected);
+    const result = genDiff(file1, file2);
+    expect(normalize(result)).toBe(normalize(expected));
+  });
+
+  test('compares mixed JSON and YAML files', () => {
+    const file1 = getFixturePath('file1.json');
+    const file2 = getFixturePath('file2.yaml');
+    const expected = readFixture('expected.txt');
     
-    expect(normalizedResult).toBe(normalizedExpected);
+    const result = genDiff(file1, file2);
+    expect(normalize(result)).toBe(normalize(expected));
   });
 
   test('throws error for non-existent file', () => {
