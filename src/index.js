@@ -16,6 +16,16 @@ const parseContent = (content, extension) => {
   }
 };
 
+const readFile = (filepath) => {
+  const absolutePath = path.resolve(filepath);
+  
+  if (!fs.existsSync(absolutePath)) {
+    throw new Error(`File not found: ${filepath}`);
+  }
+  
+  return fs.readFileSync(absolutePath, 'utf-8');
+};
+
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const ext1 = path.extname(filepath1).toLowerCase();
   const ext2 = path.extname(filepath2).toLowerCase();
@@ -26,8 +36,8 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
     throw new Error(`Unsupported file format: ${wrongExt}`);
   }
   
-  const content1 = fs.readFileSync(path.resolve(filepath1), 'utf-8');
-  const content2 = fs.readFileSync(path.resolve(filepath2), 'utf-8');
+  const content1 = readFile(filepath1);
+  const content2 = readFile(filepath2);
   
   const data1 = parseContent(content1, ext1);
   const data2 = parseContent(content2, ext2);

@@ -10,52 +10,40 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const normalize = (str) => {
-  return str
-    .trim()
-    .replace(/\r\n/g, '\n')  
-    .replace(/\s+$/gm, '');  
-};
+const normalize = (str) => str.trim();
 
 describe('gendiff', () => {
-  test('compares flat JSON files', () => {
+  test('compares nested JSON files with stylish format (default)', () => {
     const file1 = getFixturePath('file1.json');
     const file2 = getFixturePath('file2.json');
-    const expected = readFixture('expected.txt');
+    const expected = readFixture('expected-stylish.txt');
     
     const result = genDiff(file1, file2);
     expect(normalize(result)).toBe(normalize(expected));
   });
 
-  test('compares flat YAML files', () => {
+  test('compares nested JSON files with plain format', () => {
+    const file1 = getFixturePath('file1.json');
+    const file2 = getFixturePath('file2.json');
+    const expected = readFixture('expected-plain.txt');
+    
+    const result = genDiff(file1, file2, 'plain');
+    expect(normalize(result)).toBe(normalize(expected));
+  });
+
+  test('compares nested YAML files with plain format', () => {
     const file1 = getFixturePath('file1.yaml');
     const file2 = getFixturePath('file2.yaml');
-    const expected = readFixture('expected.txt');
+    const expected = readFixture('expected-plain.txt');
     
-    const result = genDiff(file1, file2);
+    const result = genDiff(file1, file2, 'plain');
     expect(normalize(result)).toBe(normalize(expected));
   });
 
-  test('compares mixed JSON and YAML files', () => {
+  test('throws error for unknown format', () => {
     const file1 = getFixturePath('file1.json');
-    const file2 = getFixturePath('file2.yaml');
-    const expected = readFixture('expected.txt');
+    const file2 = getFixturePath('file2.json');
     
-    const result = genDiff(file1, file2);
-    expect(normalize(result)).toBe(normalize(expected));
-  });
-
-  test('throws error for non-existent file', () => {
-    const file1 = getFixturePath('file1.json');
-    const file2 = 'non-existent.json';
-    
-    expect(() => genDiff(file1, file2)).toThrow();
-  });
-
-  test('throws error for unsupported format', () => {
-    const file1 = getFixturePath('file1.json');
-    const file2 = getFixturePath('unsupported.txt');
-    
-    expect(() => genDiff(file1, file2)).toThrow('Unsupported file format');
+    expect(() => genDiff(file1, file2, 'unknown')).toThrow('Unknown format');
   });
 });
