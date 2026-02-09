@@ -2,6 +2,15 @@ import fs from 'fs';
 import path from 'path';
 
 const genDiff = (file1, file2) => {
+
+  const ext1 = path.extname(file1).toLowerCase();
+  const ext2 = path.extname(file2).toLowerCase();
+  
+  if (ext1 !== '.json' || ext2 !== '.json') {
+    const wrongExt = ext1 !== '.json' ? ext1 : ext2;
+    throw new Error(`Unsupported file format: ${wrongExt}`);
+  };
+
   const data1 = JSON.parse(fs.readFileSync(path.resolve(file1), 'utf-8'));
   const data2 = JSON.parse(fs.readFileSync(path.resolve(file2), 'utf-8'));
   
