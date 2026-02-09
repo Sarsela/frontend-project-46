@@ -12,9 +12,10 @@ const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8'
 
 const normalize = (str) => {
   return str
-    .trim()
     .replace(/\r\n/g, '\n')
-    .replace(/\s+$/gm, '');
+    .replace(/[ \t]+$/gm, '')
+    .replace(/\n{2,}/g, '\n')
+    .trim();
 };
 
 describe('gendiff', () => {
