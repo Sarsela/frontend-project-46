@@ -10,7 +10,7 @@ const formatValue = (value) => {
   if (typeof value === 'string') {
     return `'${value}'`
   }
-  
+
   if (value === null) {
     return 'null'
   }
@@ -58,8 +58,12 @@ const formatPlain = (tree) => {
   const lines = tree
     .map(node => formatNode(node))
     .filter(line => line !== '')
-
-  return lines.join('\n')
+    .join('\n')
+    .split('\n')
+    .filter(line => line !== '')
+    .join('\n') 
+    
+  return lines
 }
 
 export default formatPlain
