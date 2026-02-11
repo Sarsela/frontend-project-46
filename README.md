@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/Sarsela/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg?v=2)](https://github.com/Sarsela/frontend-project-46/actions/workflows/hexlet-check.yml)
-[![CI](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml/badge.svg)](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml)
+[![CI](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml/badge.svg?v=2)](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml)
 ## Установка
 
 ```bash
