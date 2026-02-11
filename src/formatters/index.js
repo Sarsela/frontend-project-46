@@ -8,7 +8,7 @@ const formatters = {
   json,
 }
 
-export default (tree, formatName = 'stylish') => {
+export default (tree, formatName = 'normal') => {
   const formatter = formatters[formatName]
   if (!formatter) {
     throw new Error(`Unknown format: ${formatName}`)
