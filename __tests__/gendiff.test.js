@@ -128,7 +128,7 @@ describe('gendiff', () => {
     test('compares mixed JSON and YAML files', () => {
       const file1 = getFixturePath('file1.json')
       const file2 = getFixturePath('file2.yaml')
-      const expected = readFixture('expected-normal.txt')
+      const expected = readFixture('expected-stylish.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
