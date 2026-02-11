@@ -11,7 +11,7 @@ const formatValue = (value) => {
     return `'${value}'`
   }
 
-  return String(value)
+  return value
 }
 
 const buildPath = (key, parentPath) => {
