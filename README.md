@@ -2,6 +2,7 @@
 [![hexlet-check](https://github.com/Sarsela/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg?v=2)](https://github.com/Sarsela/frontend-project-46/actions/workflows/hexlet-check.yml)
 [![CI](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml/badge.svg?v=2)](https://github.com/Sarsela/frontend-project-46/actions/workflows/ci.yml)
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=Sarsela_frontend-project-46&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Sarsela_frontend-project-46)
+[![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=Sarsela_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Sarsela_frontend-project-46)
 ## Установка
 
 ```bash
