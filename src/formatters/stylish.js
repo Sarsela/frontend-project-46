@@ -5,7 +5,7 @@ const stringify = (value, depth = 1) => {
 
   if (typeof value !== 'object' || value === null) {
     if (value === '') return ''
-    return String(value)
+    return value
   }
 
   const keys = Object.keys(value)
