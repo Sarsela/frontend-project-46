@@ -21,7 +21,7 @@ npm link
 ```bash
 # Вывести справку
 gendiff -h
-![gendiff help](./assets/help.gif)
+
 # Показать версию
 gendiff -V
 
@@ -43,3 +43,6 @@ make test-yaml-plain
 # Сравнить файлы разных форматов
 gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ```
+## Демонстрация
+# Справка
+![gendiff help](./assets/help.gif)
