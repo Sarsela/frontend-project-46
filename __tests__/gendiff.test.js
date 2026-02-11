@@ -20,7 +20,7 @@ const normalize = (str) => {
 
 describe('gendiff', () => {
   describe('flat files', () => {
-    test('compares flat JSON files with normal format', () => {
+    test('compares flat JSON files with stylish format', () => {
       const file1 = getFixturePath('file1-flat.json')
       const file2 = getFixturePath('file2-flat.json')
       const expected = readFixture('expected-flat.txt')
@@ -58,10 +58,10 @@ describe('gendiff', () => {
   })
 
   describe('nested files', () => {
-    test('compares nested JSON files with normal format (default)', () => {
+    test('compares nested JSON files with stylish format (default)', () => {
       const file1 = getFixturePath('file1.json')
       const file2 = getFixturePath('file2.json')
-      const expected = readFixture('expected-normal.txt')
+      const expected = readFixture('expected-stylish.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
@@ -99,10 +99,10 @@ describe('gendiff', () => {
       })
     })
 
-    test('compares nested YAML files with normal format', () => {
+    test('compares nested YAML files with stylish format', () => {
       const file1 = getFixturePath('file1.yaml')
       const file2 = getFixturePath('file2.yaml')
-      const expected = readFixture('expected-normal.txt')
+      const expected = readFixture('expected-stylish.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
