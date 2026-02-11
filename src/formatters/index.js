@@ -6,12 +6,12 @@ const formatters = {
   stylish,
   plain,
   json,
-};
+}
 
 export default (tree, formatName = 'stylish') => {
-  const formatter = formatters[formatName];
+  const formatter = formatters[formatName]
   if (!formatter) {
-    throw new Error(`Unknown format: ${formatName}`);
+    throw new Error(`Unknown format: ${formatName}`)
   }
-  return formatter(tree);
-};
+  return formatter(tree)
+}

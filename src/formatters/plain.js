@@ -10,7 +10,10 @@ const formatValue = (value) => {
   if (typeof value === 'string') {
     return `'${value}'`
   }
-
+  
+  if (value === null) {
+    return 'null'
+  }
   return value
 }
 
