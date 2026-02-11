@@ -1,9 +1,9 @@
-import stylish from './stylish.js'
+import normal from './normal.js'
 import plain from './plain.js'
 import json from './json.js'
 
 const formatters = {
-  stylish,
+  normal,
   plain,
   json,
 }
