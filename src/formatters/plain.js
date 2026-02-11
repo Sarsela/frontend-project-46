@@ -33,10 +33,9 @@ const formatNode = (node, parentPath = '') => {
       return `Property '${currentPath}' was updated. From ${formatValue(oldValue)} to ${formatValue(newValue)}`
 
     case 'nested':
-      return children
-        .map(child => formatNode(child, currentPath))
-        .filter(Boolean)
-        .join('\n')
+      const childResults = children
+    .map(child => formatNode(child, currentPath))
+    return childResults.length > 0 ? childResults.join('\n') : ''
 
     case 'unchanged':
       return ''

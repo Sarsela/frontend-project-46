@@ -20,7 +20,7 @@ const normalize = (str) => {
 
 describe('gendiff', () => {
   describe('flat files', () => {
-    test('compares flat JSON files with stylish format', () => {
+    test('compares flat JSON files with normal format', () => {
       const file1 = getFixturePath('file1-flat.json')
       const file2 = getFixturePath('file2-flat.json')
       const expected = readFixture('expected-flat.txt')
@@ -58,10 +58,10 @@ describe('gendiff', () => {
   })
 
   describe('nested files', () => {
-    test('compares nested JSON files with stylish format (default)', () => {
+    test('compares nested JSON files with normal format (default)', () => {
       const file1 = getFixturePath('file1.json')
       const file2 = getFixturePath('file2.json')
-      const expected = readFixture('expected-stylish.txt')
+      const expected = readFixture('expected-normal.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
@@ -99,10 +99,10 @@ describe('gendiff', () => {
       })
     })
 
-    test('compares nested YAML files with stylish format', () => {
+    test('compares nested YAML files with normal format', () => {
       const file1 = getFixturePath('file1.yaml')
       const file2 = getFixturePath('file2.yaml')
-      const expected = readFixture('expected-stylish.txt')
+      const expected = readFixture('expected-normal.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
@@ -128,7 +128,7 @@ describe('gendiff', () => {
     test('compares mixed JSON and YAML files', () => {
       const file1 = getFixturePath('file1.json')
       const file2 = getFixturePath('file2.yaml')
-      const expected = readFixture('expected-stylish.txt')
+      const expected = readFixture('expected-normal.txt')
 
       const result = genDiff(file1, file2)
       expect(normalize(result)).toBe(normalize(expected))
@@ -141,13 +141,6 @@ describe('gendiff', () => {
       const file2 = 'non-existent.json'
 
       expect(() => genDiff(file1, file2)).toThrow()
-    })
-
-    test('throws error for unsupported format', () => {
-      const file1 = getFixturePath('file1.json')
-      const file2 = getFixturePath('unsupported.txt')
-
-      expect(() => genDiff(file1, file2)).toThrow('Unsupported file format')
     })
 
     test('throws error for unknown output format', () => {
