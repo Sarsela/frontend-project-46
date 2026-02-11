@@ -46,3 +46,17 @@ gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ## Демонстрация
 # Справка
 ![gendiff help](./assets/help.gif)
+# Версия
+![gendiff version](./assets/version.gif)
+# Сравнение два JSON файла
+![gendiff version](./assets/test-json.gif)
+# Сравнение с форматом plain
+![gendiff version](./assets/test-json-plain.gif)
+# Сравнение с форматом json
+![gendiff version](./assets/test-json-json.gif)
+# Сравнение YAML файлы
+![gendiff version](./assets/test-yaml.gif)
+# Сравнение YAML с форматом plain
+![gendiff version](./assets/test-yaml-plain.gif)
+# Сравнение файлы разных форматов
+![gendiff version](./assets/different.gif)
