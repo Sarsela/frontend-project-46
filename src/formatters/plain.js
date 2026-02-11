@@ -61,8 +61,8 @@ const formatPlain = (tree) => {
     .join('\n')
     .split('\n')
     .filter(line => line !== '')
-    .join('\n') 
-    
+    .join('\n')
+
   return lines
 }
 
