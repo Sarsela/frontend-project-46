@@ -23,25 +23,31 @@ const formatNode = (node, parentPath = '') => {
   const currentPath = buildPath(key, parentPath)
 
   switch (type) {
-    case 'added':
+    case 'added': {
       return `Property '${currentPath}' was added with value: ${formatValue(value)}`
+    }
 
-    case 'removed':
+    case 'removed': {
       return `Property '${currentPath}' was removed`
+    }
 
-    case 'changed':
+    case 'changed': {
       return `Property '${currentPath}' was updated. From ${formatValue(oldValue)} to ${formatValue(newValue)}`
+    }
 
-    case 'nested':
+    case 'nested': {
       const childResults = children
-    .map(child => formatNode(child, currentPath))
-    return childResults.length > 0 ? childResults.join('\n') : ''
+        .map(child => formatNode(child, currentPath))
+      return childResults.length > 0 ? childResults.join('\n') : ''
+    }
 
-    case 'unchanged':
+    case 'unchanged': {
       return ''
+    }
 
-    default:
+    default: {
       return ''
+    }
   }
 }
 
