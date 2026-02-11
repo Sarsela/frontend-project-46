@@ -44,20 +44,20 @@ make test-yaml-plain
 gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ```
 
-## Демонстрация
-# Справка
+# Демонстрация
+## Справка
 ![gendiff help](./assets/help.gif)
-# Версия
+## Версия
 ![gendiff version](./assets/version.gif)
-# Сравнение два JSON файла
+## Сравнение два JSON файла
 ![gendiff version](./assets/test-json.gif)
-# Сравнение с форматом plain
+## Сравнение с форматом plain
 ![gendiff version](./assets/test-json-plain.gif)
-# Сравнение с форматом json
+## Сравнение с форматом json
 ![gendiff version](./assets/test-json-json.gif)
-# Сравнение YAML файлы
+## Сравнение YAML файлы
 ![gendiff version](./assets/test-yaml.gif)
-# Сравнение YAML с форматом plain
+## Сравнение YAML с форматом plain
 ![gendiff version](./assets/test-yaml-plain.gif)
-# Сравнение файлы разных форматов
+## Сравнение файлы разных форматов
 ![gendiff version](./assets/different.gif)
