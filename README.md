@@ -43,6 +43,7 @@ make test-yaml-plain
 # Сравнить файлы разных форматов
 gendiff __fixtures__/file1.json __fixtures__/file2.yaml
 ```
+
 ## Демонстрация
 # Справка
 ![gendiff help](./assets/help.gif)
