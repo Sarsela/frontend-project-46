@@ -21,7 +21,7 @@ const readFile = (filepath) => {
   return fs.readFileSync(absolutePath, 'utf-8')
 }
 
-const genDiff = (filepath1, filepath2, formatName = 'normal') => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const ext1 = path.extname(filepath1).toLowerCase()
   const ext2 = path.extname(filepath2).toLowerCase()
 
