@@ -21,11 +21,11 @@ npm link
 ```bash
 # Вывести справку
 gendiff -h
-
+![gendiff help](./assets/help.gif)
 # Показать версию
 gendiff -V
 
-# Сравнить два JSON файла (формат по умолчанию - stylish)
+# Сравнить два JSON файла
 make test-json
 
 # Сравнить с форматом plain
